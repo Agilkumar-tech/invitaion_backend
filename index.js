@@ -2,8 +2,13 @@
 require('dotenv').config();
 const express = require('express');
 const wishRoutes = require('./routes/wishRoutes'); 
-app.use(cors());
+const cors = require('cors');
 const app = express();
+app.use(cors({
+  origin: '*', 
+  methods: ['GET', 'POST'],
+  credentials: true
+}));
 app.use(express.json());
 app.use('/wishes', wishRoutes);
 
