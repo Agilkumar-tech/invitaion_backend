@@ -2,7 +2,7 @@
 require('dotenv').config();
 const express = require('express');
 const wishRoutes = require('./routes/wishRoutes'); 
-
+app.use(cors());
 const app = express();
 app.use(express.json());
 app.use('/wishes', wishRoutes);
